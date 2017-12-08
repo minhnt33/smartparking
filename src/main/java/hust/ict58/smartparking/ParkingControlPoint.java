@@ -1,6 +1,7 @@
 package hust.ict58.smartparking;
 
-import hust.ict58.smartparking.action.SetDeviceIdAction;
+import javafx.application.Application;
+import javafx.stage.Stage;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.controlpoint.ActionCallback;
@@ -15,8 +16,6 @@ import org.fourthline.cling.model.message.header.STAllHeader;
 import org.fourthline.cling.model.meta.RemoteDevice;
 import org.fourthline.cling.model.meta.Service;
 import org.fourthline.cling.model.state.StateVariableValue;
-import org.fourthline.cling.model.types.BooleanDatatype;
-import org.fourthline.cling.model.types.Datatype;
 import org.fourthline.cling.model.types.UDAServiceId;
 import org.fourthline.cling.registry.DefaultRegistryListener;
 import org.fourthline.cling.registry.Registry;
@@ -25,19 +24,16 @@ import org.fourthline.cling.registry.RegistryListener;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ParkingControlPoint implements Runnable {
+public class ParkingControlPoint extends Application {
     private ParkingGraph parkingGraph = new ParkingGraph();
     private HashMap<String, RemoteDevice> controlledDevices;
 
-    public static void main(String[] args) throws Exception {
-        // Start a user thread that runs the UPnP stack
-        Thread controlPointThread = new Thread(new ParkingControlPoint());
-        controlPointThread.setDaemon(false);
-        controlPointThread.start();
+    public static void main(String[] args) {
+        launch(args);
     }
 
     @Override
-    public void run() {
+    public void start(Stage primaryStage) throws Exception {
         try {
             controlledDevices = new HashMap<>();
             UpnpService upnpService = new UpnpServiceImpl();
@@ -57,8 +53,7 @@ public class ParkingControlPoint implements Runnable {
         }
     }
 
-    private void initializePropertyChangeCallback(UpnpService upnpService, Service service)
-    {
+    private void initializePropertyChangeCallback(UpnpService upnpService, Service service) {
         SubscriptionCallback callback = new SubscriptionCallback(service, 600) {
 
             @Override

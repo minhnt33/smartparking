@@ -81,4 +81,9 @@ public class ParkingGraph {
         dijkstra.compute();
         System.out.println(dijkstra.getPath(graph.getNode("Slot3")));
     }
+
+    public void display()
+    {
+        graph.display();
+    }
 }
