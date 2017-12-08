@@ -24,6 +24,7 @@ import java.util.Map;
 public class SlotSensorApp extends DeviceApp {
     private final int SLOT_NUMBER = 5;
     private Device currentDevice;
+    private SlotSensorView slotSensorViewController;
 
     public static void main(String[] args) {
         launch(args);
@@ -35,13 +36,24 @@ public class SlotSensorApp extends DeviceApp {
         primaryStage.setTitle("Slot Sensor Control Panel");
         initializeDevices(SLOT_NUMBER, "Slot", "SlotSensor", "Using for detecting car", SlotSensor.class);
         initializeRootLayout();
+
+        // Set id for services
+        setServiceIds("SlotSensor");
+
+        // Populate combobox slot id options
+        slotSensorViewController.populateSlotSensorList(slotSensorDevices);
     }
 
     @Override
     public void onPropertyChangeCallbackReceived(GENASubscription subscription) {
         Map<String, StateVariableValue> values = subscription.getCurrentValues();
-        StateVariableValue status = values.get("Status");
-        System.out.println("Status is: " + status.toString());
+        String id = (String) values.get("Id").getValue();
+
+        // Only update current selected device
+        if (id.compareTo(currentDevice.getId()) == 0) {
+            StateVariableValue status = values.get("Status");
+            slotSensorViewController.updateSlotStatusUI((boolean) status.getValue());
+        }
     }
 
     private void initializeRootLayout() {
@@ -57,13 +69,18 @@ public class SlotSensorApp extends DeviceApp {
             primaryStage.show();
 
             // Set app reference for controller
-            SlotSensorView slotSensorViewController = loader.getController();
+            slotSensorViewController = loader.getController();
             slotSensorViewController.setApp(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Set device that is currently inspected and initialize data callback
+     *
+     * @param index
+     */
     public void setCurrentDevice(int index) {
         currentDevice = slotSensorDevices[index];
         Service service = getService(currentDevice.getDevice(), "SlotSensor");
@@ -73,19 +90,33 @@ public class SlotSensorApp extends DeviceApp {
         }
     }
 
-    public void setSlotSensorState(String id, boolean state) {
+    /**
+     * Set status value of current selected sensor
+     *
+     * @param state
+     */
+    public void setSlotSensorState(boolean state) {
         Service service = getService(currentDevice.getDevice(), "SlotSensor");
 
         if (service != null) {
             executeAction(upnpService, new SetSlotStatusAction(service, state));
+        }
+    }
 
+    /**
+     * Get status value from current selected sensor
+     */
+    public void getSlotSensorStatus() {
+        Service service = getService(currentDevice.getDevice(), "SlotSensor");
+
+        if (service != null) {
             Action getStatusAction = service.getAction("GetStatus");
             ActionInvocation actionInvocation = new ActionInvocation(getStatusAction);
             ActionCallback getStatusCallback = new ActionCallback(actionInvocation) {
                 @Override
                 public void success(ActionInvocation invocation) {
                     ActionArgumentValue status = invocation.getOutput("ResultStatus");
-                    System.out.println("Get status " + (boolean) status.getValue());
+                    slotSensorViewController.updateSlotStatusUI((boolean) status.getValue());
                 }
 
                 @Override

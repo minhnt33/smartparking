@@ -20,11 +20,11 @@ public class SlotSensor {
         return propertyChangeSupport;
     }
 
-    @UpnpStateVariable()
-    private String id = "Unknown";
+    @UpnpStateVariable(defaultValue = "Unknown")
+    private String id;
 
     @UpnpStateVariable(defaultValue = "0")
-    private boolean status = false;
+    private boolean status = false; // Note that status indicates if there was a car at this slot. So true mean slot is unavailable, and vice versa
 
     @UpnpAction
     public void setId(@UpnpInputArgument(name = "NewIdValue") String newId) {
@@ -33,22 +33,18 @@ public class SlotSensor {
 
     @UpnpAction
     public void setStatus(@UpnpInputArgument(name = "NewStatusValue") boolean newStatusValue) {
+        getPropertyChangeSupport().firePropertyChange("Id", id, id);
         getPropertyChangeSupport().firePropertyChange("Status", status, newStatusValue);
         status = newStatusValue;
-        System.out.printf("%s change status to %s\n", id, status);
     }
 
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultStatus"))
     public boolean getStatus() {
-        // If you want to pass extra UPnP information on error:
-        // throw new ActionException(ErrorCode.ACTION_NOT_AUTHORIZED);
         return status;
     }
 
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultId"))
     public String getId() {
-        // If you want to pass extra UPnP information on error:
-        // throw new ActionException(ErrorCode.ACTION_NOT_AUTHORIZED);
         return id;
     }
 }

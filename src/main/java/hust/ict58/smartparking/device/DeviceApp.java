@@ -1,5 +1,6 @@
 package hust.ict58.smartparking.device;
 
+import hust.ict58.smartparking.action.SetDeviceIdAction;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.fourthline.cling.UpnpService;
@@ -98,6 +99,17 @@ public abstract class DeviceApp extends Application {
 
     protected Service getService(LocalDevice device, String serviceId) {
         return device.findService(new UDAServiceId(serviceId));
+    }
+
+    protected void setServiceIds(String serviceIds)
+    {
+        for(Device device : slotSensorDevices) {
+            Service service = getService(device.getDevice(), serviceIds);
+
+            if(service != null) {
+                executeAction(upnpService, new SetDeviceIdAction(service, device.getId()));
+            }
+        }
     }
 
     protected void initializePropertyChangeCallback(UpnpService upnpService, Service service) {

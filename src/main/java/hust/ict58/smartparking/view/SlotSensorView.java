@@ -1,6 +1,7 @@
 package hust.ict58.smartparking.view;
 
 import hust.ict58.smartparking.SlotSensorApp;
+import hust.ict58.smartparking.device.Device;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -27,10 +28,7 @@ public class SlotSensorView {
     @FXML
     private void initialize() {
         // ComboBox
-        slotSensorDeviceIds.add("Slot0");
-        slotSensorDeviceIds.add("Slot1");
         comboBox.setItems(slotSensorDeviceIds);
-        comboBox.setValue("Slot1");
 
         // Radio Button
         availableBut.setUserData(STATE_AVAILABLE);
@@ -43,12 +41,12 @@ public class SlotSensorView {
                 // Parse status value
                 String statusStr = toggleGroup.getSelectedToggle().getUserData().toString();
                 if (statusStr.compareTo(STATE_AVAILABLE) == 0) {
-                    status = true;
-                } else if (statusStr.compareTo(STATE_UNAVAILABLE) == 0) {
                     status = false;
+                } else if (statusStr.compareTo(STATE_UNAVAILABLE) == 0) {
+                    status = true;
                 }
 
-                app.setSlotSensorState((String) comboBox.getValue(), status);
+                app.setSlotSensorState(status);
             }
         });
     }
@@ -60,6 +58,28 @@ public class SlotSensorView {
         int selectedIndex = Integer.valueOf(selectedStr);
         app.setCurrentDevice(selectedIndex);
         System.out.println("Select sensor " + selectedIndex);
+
+        app.getSlotSensorStatus();
+    }
+
+    public void populateSlotSensorList(Device[] devices)
+    {
+        for (Device device : devices)
+        {
+            slotSensorDeviceIds.add(device.getId());
+        }
+    }
+
+    public void updateSlotStatusUI(boolean status)
+    {
+        if(status)
+        {
+            unavailableBut.fire();
+        }
+        else
+        {
+            availableBut.fire();
+        }
     }
 
     public void setApp(SlotSensorApp app) {
