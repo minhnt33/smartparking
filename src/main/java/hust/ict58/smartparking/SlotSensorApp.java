@@ -41,18 +41,21 @@ public class SlotSensorApp extends DeviceApp {
         setServiceIds("SlotSensor");
 
         // Populate combobox slot id options
-        slotSensorViewController.populateSlotSensorList(slotSensorDevices);
+        slotSensorViewController.populateSlotSensorList(devices);
     }
 
     @Override
     public void onPropertyChangeCallbackReceived(GENASubscription subscription) {
         Map<String, StateVariableValue> values = subscription.getCurrentValues();
-        String id = (String) values.get("Id").getValue();
+        StateVariableValue idVar = values.get("Id");
 
-        // Only update current selected device
-        if (id.compareTo(currentDevice.getId()) == 0) {
-            StateVariableValue status = values.get("Status");
-            slotSensorViewController.updateSlotStatusUI((boolean) status.getValue());
+        if (idVar != null) {
+            String id = (String) idVar.getValue();
+            // Only update current selected device
+            if (id.compareTo(currentDevice.getId()) == 0) {
+                StateVariableValue status = values.get("Status");
+                slotSensorViewController.updateSlotStatusUI((boolean) status.getValue());
+            }
         }
     }
 
@@ -82,7 +85,7 @@ public class SlotSensorApp extends DeviceApp {
      * @param index
      */
     public void setCurrentDevice(int index) {
-        currentDevice = slotSensorDevices[index];
+        currentDevice = devices[index];
         Service service = getService(currentDevice.getDevice(), "SlotSensor");
 
         if (service != null) {

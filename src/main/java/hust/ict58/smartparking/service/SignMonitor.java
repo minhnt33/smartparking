@@ -20,37 +20,46 @@ public class SignMonitor {
         return propertyChangeSupport;
     }
 
+    @UpnpStateVariable(defaultValue = "Unknown")
+    private String id;
+
     @UpnpStateVariable(defaultValue = "forward")
     private String direction;
 
     @UpnpStateVariable(defaultValue = "0")
-    private float distance;
+    private double distance;
 
     @UpnpAction
-    public void setDirection(@UpnpInputArgument(name = "newDirection") String newDirection) {
+    public void setId(@UpnpInputArgument(name = "NewId") String newId) {
+        id = newId;
+    }
+
+    @UpnpAction(out = @UpnpOutputArgument(name = "ResultId"))
+    public String getId() {
+        return id;
+    }
+
+    @UpnpAction
+    public void setDirection(@UpnpInputArgument(name = "NewDirection") String newDirection) {
+        getPropertyChangeSupport().firePropertyChange("Id", id, id);
         getPropertyChangeSupport().firePropertyChange("Direction", direction, newDirection);
         direction = newDirection;
-        System.out.println("New Direction: " + direction);
     }
 
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultDirection"))
     public String getDirection() {
-        // If you want to pass extra UPnP information on error:
-        // throw new ActionException(ErrorCode.ACTION_NOT_AUTHORIZED);
         return direction;
     }
 
     @UpnpAction
-    public void setDistance(@UpnpInputArgument(name = "newDistance") float newDistance) {
+    public void setDistance(@UpnpInputArgument(name = "NewDistance") double newDistance) {
+        getPropertyChangeSupport().firePropertyChange("Id", id, id);
         getPropertyChangeSupport().firePropertyChange("Distance", distance, newDistance);
         distance = newDistance;
-        System.out.println("Distance to next node: " + distance);
     }
 
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultDistance"))
-    public float getDistance() {
-        // If you want to pass extra UPnP information on error:
-        // throw new ActionException(ErrorCode.ACTION_NOT_AUTHORIZED);
+    public double getDistance() {
         return distance;
     }
 }

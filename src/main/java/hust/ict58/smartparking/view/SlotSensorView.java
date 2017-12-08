@@ -52,14 +52,12 @@ public class SlotSensorView {
     }
 
     @FXML
-    private void OnSelectSlotSensor() {
+    private void onSelectSlotSensor() {
         String selectedStr = comboBox.getValue().toString();
         selectedStr = selectedStr.replace("Slot", "");
         int selectedIndex = Integer.valueOf(selectedStr);
         app.setCurrentDevice(selectedIndex);
         System.out.println("Select sensor " + selectedIndex);
-
-        app.getSlotSensorStatus();
     }
 
     public void populateSlotSensorList(Device[] devices)

@@ -18,7 +18,7 @@ import org.fourthline.cling.model.meta.Service;
 import org.fourthline.cling.model.types.UDAServiceId;
 
 public abstract class DeviceApp extends Application {
-    protected Device[] slotSensorDevices;
+    protected Device[] devices;
     protected UpnpService upnpService;
 
     // JavaFX
@@ -56,13 +56,13 @@ public abstract class DeviceApp extends Application {
      */
     private void createDevices(int amount, String prefix, String type, String description, Class deviceClass) {
         // Create slot devices
-        slotSensorDevices = new Device[amount];
+        devices = new Device[amount];
         for (int i = 0; i < amount; ++i) {
             // Create device model
             String id = prefix.concat(String.valueOf(i));
             Device device = new Device(id, type, 1, id, "ICT58", "2k17", description, "v1", deviceClass);
             device.initializeDevice();
-            slotSensorDevices[i] = device;
+            devices[i] = device;
         }
     }
 
@@ -78,7 +78,7 @@ public abstract class DeviceApp extends Application {
             });
 
             // Add the bound local device to the registry
-            addDevices(slotSensorDevices);
+            addDevices(devices);
         } catch (Exception ex) {
             System.err.println("Exception occured: " + ex);
             ex.printStackTrace(System.err);
@@ -103,7 +103,7 @@ public abstract class DeviceApp extends Application {
 
     protected void setServiceIds(String serviceIds)
     {
-        for(Device device : slotSensorDevices) {
+        for(Device device : devices) {
             Service service = getService(device.getDevice(), serviceIds);
 
             if(service != null) {

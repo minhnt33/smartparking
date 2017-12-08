@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="240.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.ict58.smartparking.view.SlotSensorView">
    <children>
-      <ComboBox fx:id="comboBox" layoutX="164.0" layoutY="75.0" onAction="#OnSelectSlotSensor" prefWidth="150.0" />
+      <ComboBox fx:id="comboBox" layoutX="164.0" layoutY="75.0" onAction="#onSelectSlotSensor" prefWidth="150.0" />
       <Label layoutX="64.0" layoutY="80.0" text="Device Id" />
       <RadioButton fx:id="availableBut" layoutX="160.0" layoutY="138.0" mnemonicParsing="false" text="Available" />
       <RadioButton fx:id="unavailableBut" layoutX="160.0" layoutY="183.0" mnemonicParsing="false" text="Unavailable" />

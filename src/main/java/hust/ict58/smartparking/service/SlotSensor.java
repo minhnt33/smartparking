@@ -27,15 +27,15 @@ public class SlotSensor {
     private boolean status = false; // Note that status indicates if there was a car at this slot. So true mean slot is unavailable, and vice versa
 
     @UpnpAction
-    public void setId(@UpnpInputArgument(name = "NewIdValue") String newId) {
+    public void setId(@UpnpInputArgument(name = "NewId") String newId) {
         id = newId;
     }
 
     @UpnpAction
-    public void setStatus(@UpnpInputArgument(name = "NewStatusValue") boolean newStatusValue) {
+    public void setStatus(@UpnpInputArgument(name = "NewStatus") boolean newStatus) {
         getPropertyChangeSupport().firePropertyChange("Id", id, id);
-        getPropertyChangeSupport().firePropertyChange("Status", status, newStatusValue);
-        status = newStatusValue;
+        getPropertyChangeSupport().firePropertyChange("Status", status, newStatus);
+        status = newStatus;
     }
 
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultStatus"))

@@ -9,8 +9,7 @@ public class SetSlotStatusAction extends ActionInvocation {
         super(service.getAction("SetStatus"));
 
         try {
-            // Throws InvalidValueException if the value is of wrong type
-            setInput("NewStatusValue", status);
+            setInput("NewStatus", status);
         } catch (InvalidValueException ex) {
             System.err.println(ex.getMessage());
             System.exit(1);

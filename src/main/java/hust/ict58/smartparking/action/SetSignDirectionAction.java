@@ -4,16 +4,15 @@ import org.fourthline.cling.model.action.ActionInvocation;
 import org.fourthline.cling.model.meta.Service;
 import org.fourthline.cling.model.types.InvalidValueException;
 
-public class SetDeviceIdAction extends ActionInvocation {
-    public SetDeviceIdAction(Service service, String id) {
-        super(service.getAction("SetId"));
+public class SetSignDirectionAction extends ActionInvocation {
+    public SetSignDirectionAction(Service service, String direction) {
+        super(service.getAction("SetDirection"));
 
         try {
-            setInput("NewId", id);
+            setInput("NewDirection", direction);
         } catch (InvalidValueException ex) {
             System.err.println(ex.getMessage());
             System.exit(1);
         }
     }
 }
-
