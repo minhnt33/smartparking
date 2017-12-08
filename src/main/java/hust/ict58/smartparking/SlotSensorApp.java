@@ -39,7 +39,6 @@ public class SlotSensorApp extends DeviceApp {
 
     @Override
     public void onPropertyChangeCallbackReceived(GENASubscription subscription) {
-        //System.out.println("Event: " + sub.getCurrentSequence().getValue());
         Map<String, StateVariableValue> values = subscription.getCurrentValues();
         StateVariableValue status = values.get("Status");
         System.out.println("Status is: " + status.toString());

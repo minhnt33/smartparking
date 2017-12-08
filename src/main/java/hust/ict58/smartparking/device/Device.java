@@ -12,9 +12,9 @@ import org.fourthline.cling.model.types.UDN;
 import java.io.IOException;
 
 /**
- * Base class for all devices. This class is a runnable object, so it need to be run in a thread.
+ * Base class for all devices
  */
-public class Device implements Runnable {
+public class Device {
     private LocalDevice device;
     private String id;
     private String type;
@@ -42,8 +42,7 @@ public class Device implements Runnable {
 
     }
 
-    public void initializeDevice()
-    {
+    public void initializeDevice() {
         try {
             device = createLocalDevice(id, type, version, friendlyName, manufacturer, modelName, description, modelNumber, service);
         } catch (IOException e) {
@@ -53,25 +52,19 @@ public class Device implements Runnable {
         }
     }
 
-    @Override
-    public void run() {
-
-    }
-
     private LocalDevice createLocalDevice(String id, String typeName, int version, String friendlyName, String manufacturer, String modelName, String description, String modelNumber, Class service) throws ValidationException, LocalServiceBindingException, IOException {
         DeviceIdentity identity = new DeviceIdentity(UDN.uniqueSystemIdentifier(id));
         DeviceType type = new UDADeviceType(typeName, version);
         DeviceDetails details = new DeviceDetails(friendlyName, new ManufacturerDetails(manufacturer), new ModelDetails(modelName, description, modelNumber));
         Icon icon = new Icon("image/png", 48, 48, 8, getClass().getResource("/icon.png"));
 
-        LocalService<SwitchPower> deviceService = new AnnotationLocalServiceBinder().read(service);
+        LocalService deviceService = new AnnotationLocalServiceBinder().read(service);
         deviceService.setManager(new DefaultServiceManager(deviceService, service));
 
         return new LocalDevice(identity, type, details, icon, deviceService);
     }
 
-    public LocalDevice getDevice()
-    {
+    public LocalDevice getDevice() {
         return device;
     }
 
