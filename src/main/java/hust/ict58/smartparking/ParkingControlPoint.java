@@ -1,9 +1,13 @@
 package hust.ict58.smartparking;
 
+import hust.ict58.smartparking.action.SetSignDirectionAction;
+import hust.ict58.smartparking.action.SetSignDistanceAction;
+import hust.ict58.smartparking.action.SetSlotStatusAction;
 import hust.ict58.smartparking.view.ControlPointView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.fourthline.cling.UpnpService;
@@ -24,6 +28,9 @@ import org.fourthline.cling.model.types.UDAServiceId;
 import org.fourthline.cling.registry.DefaultRegistryListener;
 import org.fourthline.cling.registry.Registry;
 import org.fourthline.cling.registry.RegistryListener;
+import org.graphstream.graph.Edge;
+import org.graphstream.graph.Node;
+import org.graphstream.graph.Path;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -227,5 +234,57 @@ public class ParkingControlPoint extends Application {
     private void onSlotSensorDataChange(String id, boolean status) {
         parkingGraph.setNodeColor(id, status ? "red" : "green");
         parkingGraph.setNodeAttribute(id, "Status", String.valueOf(status));
+    }
+
+    public void findPathToNearestAvailableSlot() {
+        ParkingGraph.SlotPath slotPath = parkingGraph.findNearestAvailableSlot();
+
+        if (slotPath != null) {
+            // Reset labels
+            parkingGraph.showNodeLabel();
+
+            String slotId = slotPath.getSlotId();
+            Path path = slotPath.getPath();
+
+            // Change edges color
+            for (Edge edge : path.getEachEdge()) {
+                edge.addAttribute("ui.style", "fill-color: red;");
+
+                // Set distance and direction for sign
+                Node sourceNode = edge.getSourceNode();
+                String direction = edge.getAttribute("direction");
+                double distance = edge.getAttribute("length");
+
+                // Update sign ui
+                onSignMonitorDistanceChange(sourceNode.getId(), distance);
+                onSignMonitorDirectionChange(sourceNode.getId(), direction);
+
+                // Update sign service state
+                Service service = controlledDevices.get(sourceNode.getId()).findService(new UDAServiceId("SignMonitor"));
+                if(service != null)
+                {
+                    executeAction(upnpService, new SetSignDirectionAction(service, direction));
+                    executeAction(upnpService, new SetSignDistanceAction(service, distance));
+                }
+            }
+
+            // Change status of slot on control point UI
+            onSlotSensorDataChange(slotId, true);
+
+            // Change status of slot on service
+            Service service = controlledDevices.get(slotId).findService(new UDAServiceId("SlotSensor"));
+            if (service != null) {
+                executeAction(upnpService, new SetSlotStatusAction(service, true));
+            }
+        } else {
+            // Show the error message.
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(primaryStage);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Parking slot is full now");
+            alert.setContentText("Please wait until there has an available slot");
+
+            alert.showAndWait();
+        }
     }
 }

@@ -8,7 +8,7 @@ public class ControlPointView {
 
     @FXML
     private void onHasCar() {
-
+        app.findPathToNearestAvailableSlot();
     }
 
     public void setApp(ParkingControlPoint app) {

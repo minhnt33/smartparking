@@ -52,8 +52,9 @@ public class SlotSensorApp extends DeviceApp {
         if (idVar != null) {
             String id = (String) idVar.getValue();
             // Only update current selected device
-            if (id.compareTo(currentDevice.getId()) == 0) {
+            if (id.equals(currentDevice.getId())) {
                 StateVariableValue status = values.get("Status");
+                System.out.println("SLot App Status change " + (boolean)status.getValue());
                 slotSensorViewController.updateSlotStatusUI((boolean) status.getValue());
             }
         }

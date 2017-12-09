@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 public class SlotSensorView {
     @FXML
