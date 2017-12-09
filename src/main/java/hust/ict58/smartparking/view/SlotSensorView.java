@@ -19,7 +19,6 @@ public class SlotSensorView {
 
     private ObservableList<String> slotSensorDeviceIds = FXCollections.observableArrayList();
     private final ToggleGroup toggleGroup = new ToggleGroup();
-    private boolean status;
     private SlotSensorApp app;
 
     private static final String STATE_AVAILABLE = "available";
@@ -38,11 +37,12 @@ public class SlotSensorView {
 
         toggleGroup.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
             if (toggleGroup.getSelectedToggle() != null) {
+                boolean status = false;
                 // Parse status value
-                String statusStr = toggleGroup.getSelectedToggle().getUserData().toString();
-                if (statusStr.compareTo(STATE_AVAILABLE) == 0) {
+                String statusStr = (String) toggleGroup.getSelectedToggle().getUserData();
+                if (statusStr.equals(STATE_AVAILABLE)) {
                     status = false;
-                } else if (statusStr.compareTo(STATE_UNAVAILABLE) == 0) {
+                } else if (statusStr.equals(STATE_UNAVAILABLE)) {
                     status = true;
                 }
 

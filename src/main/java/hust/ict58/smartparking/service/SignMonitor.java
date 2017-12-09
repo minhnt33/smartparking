@@ -41,9 +41,11 @@ public class SignMonitor {
 
     @UpnpAction
     public void setDirection(@UpnpInputArgument(name = "NewDirection") String newDirection) {
-        getPropertyChangeSupport().firePropertyChange("Id", id, id);
-        getPropertyChangeSupport().firePropertyChange("Direction", direction, newDirection);
         direction = newDirection;
+        //getPropertyChangeSupport().firePropertyChange("Id", id, id);
+        getPropertyChangeSupport().firePropertyChange("Direction", null, null);
+        //getPropertyChangeSupport().firePropertyChange("Distance", distance, distance);
+
     }
 
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultDirection"))
@@ -53,9 +55,10 @@ public class SignMonitor {
 
     @UpnpAction
     public void setDistance(@UpnpInputArgument(name = "NewDistance") double newDistance) {
-        getPropertyChangeSupport().firePropertyChange("Id", id, id);
-        getPropertyChangeSupport().firePropertyChange("Distance", distance, newDistance);
+        //getPropertyChangeSupport().firePropertyChange("Id", id, id);
+        //getPropertyChangeSupport().firePropertyChange("Direction", direction, direction);
         distance = newDistance;
+        getPropertyChangeSupport().firePropertyChange("Distance", null, null);
     }
 
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultDistance"))

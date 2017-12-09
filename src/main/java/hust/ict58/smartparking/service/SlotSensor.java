@@ -1,6 +1,7 @@
 package hust.ict58.smartparking.service;
 
 import org.fourthline.cling.binding.annotations.*;
+import org.fourthline.cling.model.ModelUtil;
 
 import java.beans.PropertyChangeSupport;
 
@@ -33,9 +34,8 @@ public class SlotSensor {
 
     @UpnpAction
     public void setStatus(@UpnpInputArgument(name = "NewStatus") boolean newStatus) {
-        getPropertyChangeSupport().firePropertyChange("Id", id, id);
-        getPropertyChangeSupport().firePropertyChange("Status", status, newStatus);
         status = newStatus;
+        getPropertyChangeSupport().firePropertyChange("Status", null, null);
     }
 
     @UpnpAction(out = @UpnpOutputArgument(name = "ResultStatus"))

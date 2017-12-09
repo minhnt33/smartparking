@@ -48,7 +48,7 @@ public class SignMonitorApp extends DeviceApp {
 
         if (idVar != null) {
             String id = (String) idVar.getValue();
-            if (id.compareTo(currentDevice.getId()) == 0) {
+            if (id.equals(currentDevice.getId())) {
                 StateVariableValue directionVar = values.get("Direction");
                 StateVariableValue distanceVar = values.get("Distance");
 
