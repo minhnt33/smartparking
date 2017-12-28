@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/smartparking.iml" filepath="$PROJECT_DIR$/.idea/modules/smartparking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/smartparking_main.iml" filepath="$PROJECT_DIR$/.idea/modules/smartparking_main.iml" group="smartparking" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/smartparking_test.iml" filepath="$PROJECT_DIR$/.idea/modules/smartparking_test.iml" group="smartparking" />
+    </modules>
+  </component>
+</project>

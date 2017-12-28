@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="240.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.ict58.smartparking.view.ControlPointView">
+   <children>
+      <Label layoutX="27.0" layoutY="32.0" text="Smart Parking Control Panel">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="129.0" layoutY="95.0" mnemonicParsing="false" onAction="#onHasCar" text="Has Car" />
+   </children>
+</AnchorPane>
