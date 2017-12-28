@@ -37,7 +37,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ParkingControlPoint extends Application {
-    private ParkingGraph parkingGraph = new ParkingGraph();
+    private ParkingGraph parkingGraph = new ParkingGraph("graph");
     private HashMap<String, RemoteDevice> controlledDevices;
     private final UpnpService upnpService = new UpnpServiceImpl();
     private Stage primaryStage;
@@ -236,6 +236,39 @@ public class ParkingControlPoint extends Application {
         parkingGraph.setNodeAttribute(id, "Status", String.valueOf(status));
     }
 
+    private void resetSignMonitors()
+    {
+        for (Node signalNode : parkingGraph.getSignalNodes()) {
+            Service service = controlledDevices.get(signalNode.getId()).findService(new UDAServiceId("SignMonitor"));
+            if (service != null) {
+                executeAction(upnpService, new SetSignDirectionAction(service, " "));
+                executeAction(upnpService, new SetSignDistanceAction(service, 0.0));
+            }
+        }
+    }
+
+    private void resetSlotSensor()
+    {
+        for (Node slotNode : parkingGraph.getSlotNodes()) {
+            Service service = controlledDevices.get(slotNode.getId()).findService(new UDAServiceId("SlotSensor"));
+            if (service != null) {
+                executeAction(upnpService, new SetSlotStatusAction(service, false));
+            }
+        }
+    }
+
+    public void loadGraph(String graphName) {
+        if(parkingGraph != null) {
+            resetSignMonitors();
+            resetSlotSensor();
+            parkingGraph.clear();
+        }
+
+        parkingGraph = new ParkingGraph(graphName);
+        parkingGraph.display();
+        parkingGraph.showNodeLabel();
+    }
+
     public void findPathToNearestAvailableSlot() {
         ParkingGraph.SlotPath slotPath = parkingGraph.findNearestAvailableSlot();
 
@@ -245,6 +278,28 @@ public class ParkingControlPoint extends Application {
 
             String slotId = slotPath.getSlotId();
             Path path = slotPath.getPath();
+
+            // Only reset not showing sign
+            for (Node node : parkingGraph.getSignalNodes())
+            {
+                boolean signShowing = false;
+                for (Edge edge : path.getEdgePath())
+                {
+                    if(edge.getSourceNode().getId().equals(node.getId()))
+                    {
+                        signShowing = true;
+                    }
+                }
+
+                if(!signShowing)
+                {
+                    Service service = controlledDevices.get(node.getId()).findService(new UDAServiceId("SignMonitor"));
+                    if (service != null) {
+                        executeAction(upnpService, new SetSignDirectionAction(service, " "));
+                        executeAction(upnpService, new SetSignDistanceAction(service, 0.0));
+                    }
+                }
+            }
 
             // Change edges color
             for (Edge edge : path.getEachEdge()) {
@@ -261,8 +316,7 @@ public class ParkingControlPoint extends Application {
 
                 // Update sign service state
                 Service service = controlledDevices.get(sourceNode.getId()).findService(new UDAServiceId("SignMonitor"));
-                if(service != null)
-                {
+                if (service != null) {
                     executeAction(upnpService, new SetSignDirectionAction(service, direction));
                     executeAction(upnpService, new SetSignDistanceAction(service, distance));
                 }

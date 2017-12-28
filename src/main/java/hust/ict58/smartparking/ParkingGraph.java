@@ -1,5 +1,9 @@
 package hust.ict58.smartparking;
 
+import hust.ict58.smartparking.util.Coordinate3;
+import hust.ict58.smartparking.util.EdgeInfo;
+import hust.ict58.smartparking.util.GraphInfo;
+import hust.ict58.smartparking.util.NodeInfo;
 import org.graphstream.algorithm.Dijkstra;
 import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
@@ -7,7 +11,6 @@ import org.graphstream.graph.Node;
 import org.graphstream.graph.Path;
 import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.ui.view.Viewer;
-import scala.util.parsing.combinator.testing.Str;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,41 +21,38 @@ public class ParkingGraph {
     private List<Node> signalNodes;
     private Dijkstra dijkstra;
 
-    public ParkingGraph() {
-        graph = new SingleGraph("hust.ict58.smartparking.ParkingGraph");
+    public ParkingGraph(String graphName) {
+        graph = new SingleGraph(graphName);
         slotNodes = new ArrayList<>();
         signalNodes = new ArrayList<>();
 
-        loadGraphData();
+        loadGraphData(graphName);
         extractNodeType("Slot", slotNodes);
-        extractNodeType("Signal", signalNodes);
+        extractNodeType("Sign", signalNodes);
         initializeDijkstra();
         sortSlot();
     }
 
-    private void loadGraphData() {
-        // Add nodes
-        graph.addNode("Sign0").setAttribute("xyz", 4, 1, 0);
-        graph.addNode("Slot0").setAttribute("xyz", 6, 2, 0);
-        graph.addNode("Slot1").setAttribute("xyz", 6, 4, 0);
-        graph.addNode("Slot2").setAttribute("xyz", 2, 4, 0);
-        graph.addNode("Slot3").setAttribute("xyz", 4, 7, 0);
-        graph.addNode("Slot4").setAttribute("xyz", 2, 2, 0);
-        graph.addNode("Sign1").setAttribute("xyz", 4, 3, 0);
-        graph.addNode("Sign2").setAttribute("xyz", 4, 5, 0);
+    private void loadGraphData(String graphName) {
+        GraphLoader graphLoader = new GraphLoader();
+        GraphInfo graphInfo = graphLoader.load(graphName + ".dat");
 
-        // Add edges
-        createEdge("Sign0Sign1", "Sign0", "Sign1", 1.0, "forward");
-        createEdge("Sign1Slot0", "Sign1", "Slot0", 1.0, "right");
-        createEdge("Sign1Slot4", "Sign1", "Slot4", 1.0, "left");
-        createEdge("Sign12", "Sign1", "Sign2", 1.0, "forward");
-        createEdge("Sign2Slot1", "Sign2", "Slot1", 1.0, "right");
-        createEdge("Sign2Slot3", "Sign2", "Slot3", 1.0, "forward");
-        createEdge("Sign2Slot2", "Sign2", "Slot2", 1.0, "left");
+        if (graphInfo != null) {
+            // Add node info
+            for (NodeInfo nodeInfo : graphInfo.getNodeInfoList()) {
+                Coordinate3 coordinate = nodeInfo.getCoordinate();
+                graph.addNode(nodeInfo.getId()).setAttribute("xyz", coordinate.getX(), coordinate.getY(), coordinate.getZ());
+                setNodeColor(nodeInfo.getId(), "green");
+            }
+
+            // Add edge info
+            for (EdgeInfo edgeInfo : graphInfo.getEdgeInfoList()) {
+                createEdge(edgeInfo.getId(), edgeInfo.getInNodeId(), edgeInfo.getOutNodeId(), edgeInfo.getLength(), edgeInfo.getDirection());
+            }
+        }
     }
 
-    private void createEdge(String id, String node1, String node2, double length, String direction)
-    {
+    private void createEdge(String id, String node1, String node2, double length, String direction) {
         Edge edge = graph.addEdge(id, node1, node2);
         edge.addAttribute("length", length);
         edge.addAttribute("direction", direction);
@@ -77,6 +77,14 @@ public class ParkingGraph {
         dijkstra.compute();
 
         // Pre sort slot list from nearest to farthest slot
+    }
+
+    public List<Node> getSlotNodes() {
+        return slotNodes;
+    }
+
+    public List<Node> getSignalNodes() {
+        return signalNodes;
     }
 
     public int getSlotNumber() {
@@ -118,24 +126,27 @@ public class ParkingGraph {
     }
 
     public SlotPath findNearestAvailableSlot() {
-        for (int i = 0; i < slotNodes.size(); i++)
-        {
+        for (int i = 0; i < slotNodes.size(); i++) {
             Node slot = slotNodes.get(i);
             boolean status = Boolean.valueOf(slot.getAttribute("Status"));
 
-            if(status)
-            {
+            if (status) {
                 continue;
             }
 
             return new SlotPath(slot.getId(), dijkstra.getPath(slot));
         }
-        return  null;
+        return null;
     }
 
     public void display() {
         Viewer viewer = graph.display();
         viewer.disableAutoLayout();
+    }
+
+    public void clear()
+    {
+        graph.clear();
     }
 
     public void setNodeColor(String nodeId, String color) {
@@ -174,12 +185,11 @@ public class ParkingGraph {
         return graph.getNode(id).hasAttribute(attr);
     }
 
-    public class SlotPath{
+    public class SlotPath {
         private Path path;
         private String slotId;
 
-        public SlotPath(String slotId, Path path)
-        {
+        public SlotPath(String slotId, Path path) {
             this.slotId = slotId;
             this.path = path;
         }

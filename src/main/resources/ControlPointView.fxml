@@ -7,7 +7,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="240.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.ict58.smartparking.view.ControlPointView">
    <children>
       <Label layoutX="27.0" layoutY="32.0" text="Smart Parking Control Panel">
@@ -15,6 +14,8 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="129.0" layoutY="95.0" mnemonicParsing="false" onAction="#onHasCar" text="Has Car" />
+      <Button layoutX="129.0" layoutY="180.0" mnemonicParsing="false" onAction="#onHasCar" text="Has Car" />
+      <TextField fx:id="textField" layoutX="22.0" layoutY="97.0" promptText="graph name" />
+      <Button layoutX="209.0" layoutY="98.0" mnemonicParsing="false" onAction="#onLoadGraph" text="Load Graph" />
    </children>
 </AnchorPane>

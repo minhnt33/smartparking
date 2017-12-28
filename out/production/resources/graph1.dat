@@ -1,0 +1,18 @@
+8
+Sign0 4 1 0
+Sign1 4 3 0
+Sign2 4 5 0
+Slot0 6 2 0
+Slot1 6 4 0
+Slot2 2 4 0
+Slot3 4 7 0
+Slot4 2 2 0
+8
+Sign0 Slot0 1.0 right
+Slot0 Slot1 1.0 forward
+Sign0 Sign1 1.0 forward
+Sign1 Slot4 1.0 left
+Sign1 Sign2 1.0 forward
+Sign2 Slot1 1.0 right
+Sign2 Slot3 1.0 forward
+Sign2 Slot2 1.0 left

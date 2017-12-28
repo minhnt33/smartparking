@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="202240f7-307c-4ee1-b237-750c60ad0399" name="Default" comment="" />
+    <list default="true" id="202240f7-307c-4ee1-b237-750c60ad0399" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/ParkingControlPoint$3.class" afterPath="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/ParkingControlPoint$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/ParkingControlPoint.class" afterPath="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/ParkingControlPoint.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/ParkingGraph$SlotPath.class" afterPath="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/ParkingGraph$SlotPath.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/ParkingGraph.class" afterPath="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/ParkingGraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/view/ControlPointView.class" afterPath="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/view/ControlPointView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/resources/ControlPointView.fxml" afterPath="$PROJECT_DIR$/out/production/resources/ControlPointView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingControlPoint.java" afterPath="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingControlPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingGraph.java" afterPath="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingGraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/ControlPointView.java" afterPath="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/ControlPointView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/ControlPointView.fxml" afterPath="$PROJECT_DIR$/src/main/resources/ControlPointView.fxml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -59,85 +71,103 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SlotSensorView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/SlotSensorView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignMonitorView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/SignMonitorView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="52" column="44" lean-forward="false" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParkingControlPoint.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingControlPoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="240" column="0" lean-forward="true" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#start#0;class#ParkingControlPoint#0" expanded="false" />
-                <element signature="method#initializeRootLayout#0;class#ParkingControlPoint#0" expanded="false" />
-                <element signature="method#initializePropertyChangeCallback#0;class#ParkingControlPoint#0" expanded="false" />
-                <element signature="method#createRegistryListener#0;class#ParkingControlPoint#0" expanded="false" />
-                <element signature="method#executeAction#0;class#ParkingControlPoint#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParkingGraph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="49" column="63" lean-forward="false" selection-start-line="49" selection-start-column="63" selection-end-line="49" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignMonitorApp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/SignMonitorApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlotSensorApp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/SlotSensorApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="105" column="80" lean-forward="false" selection-start-line="105" selection-start-column="80" selection-end-line="105" selection-end-column="80" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6770428">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="SignMonitorApp.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/SignMonitorApp.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="61" column="17" lean-forward="true" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SlotSensorApp.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/SlotSensorApp.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ParkingControlPoint.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingControlPoint.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2924">
+                  <caret line="289" column="43" lean-forward="true" selection-start-line="289" selection-start-column="43" selection-end-line="289" selection-end-column="43" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#initializePropertyChangeCallback#0;class#ParkingControlPoint#0" expanded="false" />
+                    <element signature="method#createRegistryListener#0;class#ParkingControlPoint#0" expanded="false" />
+                    <element signature="method#executeAction#0;class#ParkingControlPoint#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ParkingGraph.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingGraph.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="93">
+                  <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="graph.dat" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/graph.dat">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="graph1.dat" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/graph1.dat">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="graph2.dat" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/graph2.dat">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -513,17 +543,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BinaryLightClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ict58/smartparking/server/SwitchPower.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/services/SwitchPower.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/services/SlotSensorService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/services/SlotSensor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ParkingGraph.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device/SlotSensor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device/SwitchPower.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/service/SwitchPower.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/service/SlotSensorDevice.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device/SlotSensorDevice.java" />
         <option value="$PROJECT_DIR$/src/main/java/BinaryLightServer.java" />
@@ -553,17 +572,28 @@
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device/DeviceApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/action/SetDeviceIdAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/action/SetSlotStatusAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/action/SetSignDistanceAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/SignMonitorView.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/ControlPointView.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/SignMonitorApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/service/SlotSensor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/ControlPointView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingGraph.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/service/SignMonitor.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/SlotSensorApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/SlotSensorView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/util/Vector3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/util/Coordinate3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/util/NodeInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/util/GraphInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/util/EdgeInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/GraphLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/graph.txt" />
+        <option value="$PROJECT_DIR$/src/main/resources/graph1.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/ControlPointView.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/graph2.dat" />
+        <option value="$PROJECT_DIR$/src/main/resources/graph.dat" />
+        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/action/SetSignDistanceAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingGraph.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/SignMonitorApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingControlPoint.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/graph1.dat" />
       </list>
     </option>
   </component>
@@ -609,17 +639,6 @@
             <path>
               <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
               <item name="smartparking" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartparking" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smartparking" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="smartparking" type="b2602c69:ProjectViewProjectNode" />
@@ -698,7 +717,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="grad&#9;ACTION&#9;ActivateGradleToolWindow&#10;gradle&#9;ACTION&#9;ActivateGradleToolWindow" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.291954" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -708,16 +727,17 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/eventutils" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view" />
+      <recent name="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device" />
-      <recent name="$PROJECT_DIR$/out/production/classes/hust/ict58/smartparking/device" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/eventutils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -925,10 +945,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1922" height="1092" extended-state="6" />
+    <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -936,7 +958,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20052083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.196875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -948,10 +971,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -959,63 +980,16 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/BinaryLightServer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/service/SlotSensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/BinaryLightClient.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="80" column="5" lean-forward="false" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device/Device.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device/SlotSensorDevice.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingControlPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#ParkingControlPoint#0" expanded="false" />
             <element signature="method#initializeRootLayout#0;class#ParkingControlPoint#0" expanded="false" />
             <element signature="method#initializePropertyChangeCallback#0;class#ParkingControlPoint#0" expanded="false" />
@@ -1098,14 +1072,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device/Device.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/SignMonitorView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1125,13 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/action/SetSignDistanceAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ControlPointView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1139,14 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device/DeviceApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="114" column="51" lean-forward="false" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1163,26 +1114,6 @@
         <state relative-caret-position="272">
           <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/service/SignMonitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/ControlPointView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1206,24 +1137,187 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/SlotSensorView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+        <state relative-caret-position="833">
+          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/util/Coordinate3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/util/NodeInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="e#277#278#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/util/GraphInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="e#575#576#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#771#772#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/util/EdgeInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/ControlPointView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/service/SignMonitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/action/SetSignDistanceAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/view/SignMonitorView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="52" column="44" lean-forward="false" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+        <state relative-caret-position="152">
+          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding>
+            <element signature="e#866#867#0" expanded="true" />
+            <element signature="e#921#922#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/GraphLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/device/DeviceApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="56" column="56" lean-forward="false" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="49" column="63" lean-forward="false" selection-start-line="49" selection-start-column="63" selection-end-line="49" selection-end-column="63" />
+        <state relative-caret-position="93">
+          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/graph.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/graph1.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/graph2.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingControlPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2924">
+          <caret line="289" column="43" lean-forward="true" selection-start-line="289" selection-start-column="43" selection-end-line="289" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initializePropertyChangeCallback#0;class#ParkingControlPoint#0" expanded="false" />
+            <element signature="method#createRegistryListener#0;class#ParkingControlPoint#0" expanded="false" />
+            <element signature="method#executeAction#0;class#ParkingControlPoint#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/SlotSensorApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1232,33 +1326,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/SignMonitorApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/SlotSensorApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="105" column="80" lean-forward="false" selection-start-line="105" selection-start-column="80" selection-end-line="105" selection-end-column="80" />
+        <state relative-caret-position="238">
+          <caret line="61" column="17" lean-forward="true" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hust/ict58/smartparking/ParkingControlPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="240" column="0" lean-forward="true" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#start#0;class#ParkingControlPoint#0" expanded="false" />
-            <element signature="method#initializeRootLayout#0;class#ParkingControlPoint#0" expanded="false" />
-            <element signature="method#initializePropertyChangeCallback#0;class#ParkingControlPoint#0" expanded="false" />
-            <element signature="method#createRegistryListener#0;class#ParkingControlPoint#0" expanded="false" />
-            <element signature="method#executeAction#0;class#ParkingControlPoint#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1298,7 +1369,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.291954" />
               </list>
             </option>
           </splitter-proportions>
@@ -1306,7 +1377,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>9.0</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
